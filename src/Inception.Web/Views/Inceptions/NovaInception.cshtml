@@ -1,0 +1,14 @@
+﻿@model Inception.Application.ViewModels.InceptionsViewModel
+@{
+    ViewData["Title"] = "Nova Inception";
+}
+
+<h1>Cadastro de uma Nova Inception</h1>
+
+<form asp-action="NovaInception" asp-controller="Inceptions" method="post">
+    <div class="form-group">
+        <label for="nameInception">Nome da Inception</label>
+        <input type="text" class="form-control" id="nameInception" aria-describedby="nome da inception" placeholder="Informe o nome da Inception..." asp-for="Nome" />
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

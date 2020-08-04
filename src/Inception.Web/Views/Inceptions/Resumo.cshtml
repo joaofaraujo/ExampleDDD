@@ -1,0 +1,71 @@
+﻿@model Inception.Application.ViewModels.InceptionsViewModel
+@{
+    ViewData["Title"] = "Resumo";
+}
+
+<h2>@Model.Nome</h2>
+
+<div>
+    <div class="form-row col-12">
+        <label>Id: @Model.Id</label>
+    </div>
+
+    <div class="form-row col-12">
+        <label>Identificador: @Model.Identificador</label>
+    </div>
+    <div class="form-row col-12">
+        <label>Nome: @Model.Nome</label>
+    </div>
+    <div class="form-row col-12">
+        <label>Data de Cadastro: @Model.DataCriacao.ToString("label/MM/yyyy HH:mm:ss")</label>
+    </div>
+
+    <div class="row">
+        <a class="btn btn-secondary col-4 m-4" asp-action="index" asp-controller="home">Cadastrar perguntas</a>
+        <a class="btn btn-secondary col-4 m-4" asp-action="index" asp-controller="home">Cadastrar Necessidades</a>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <h3>Problemas</h3>
+            <table class="table-bordered col-12">
+                <thead>
+                    <tr>
+                        <th>Abreviação</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Problemas)
+                    {
+                        <tr>
+                            <td>@item.Key</td>
+                            <td>@item.Value</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+            <h3>Necessidades</h3>
+            <table class="table-bordered col-12">
+                <thead>
+                    <tr>
+                        <th>Abreviação</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Necessidades)
+                    {
+                        <tr>
+                            <td>@item.Key</td>
+                            <td>@item.Value</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

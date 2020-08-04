@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EventBus.RabbitMQ" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Inception.Application\Inception.Application.csproj" />
+    <ProjectReference Include="..\Inception.CrossCutting\Inception.CrossCutting.csproj" />
+    <ProjectReference Include="..\Inception.Data\Inception.Data.csproj" />
+    <ProjectReference Include="..\Inception.Domain\Inception.Domain.csproj" />
+    <ProjectReference Include="..\Inception.FileWatch\Inception.FileWatch.csproj" />
+  </ItemGroup>
+
+</Project>
